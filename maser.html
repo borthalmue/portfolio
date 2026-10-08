@@ -5,25 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Masers in Medicine — Research | Brock Pola</title>
 <meta name="description" content="Independent research paper on maser (microwave) technology applied to medicine — tissue absorption, thermal modeling, regulatory standards, and clinical use cases.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%235ee8c5%22/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23c2a26c%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <nav class="nav">
   <div class="wrap">
-    <a href="index.html" class="brand"><span class="dot"></span>Brock Pola</a>
+    <a href="index.html" class="brand">Brock Pola</a>
     <ul class="nav-links">
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#experience">Experience</a></li>
       <li><a href="index.html#projects">Projects</a></li>
       <li><a href="index.html#research">Research</a></li>
-      <li><a href="index.html#skills">Skills</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
       <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
       <button class="icon-btn nav-toggle" aria-label="Menu" id="menu-toggle" title="Menu">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -32,34 +34,32 @@
   </div>
 </nav>
 
-<header class="hero" style="padding:80px 0 50px;">
-  <div class="wrap research-body" style="max-width:760px;">
+<header class="hero" style="padding:72px 0 40px;">
+  <div class="wrap research-body">
     <a href="index.html#research" class="back-link">← Back to portfolio</a>
-    <span class="eyebrow">● Independent Research</span>
-    <h1 style="font-size:clamp(2rem,4.5vw,2.8rem);">Masers in Medicine</h1>
+    <p class="eyebrow">Independent Research</p>
+    <h1 style="font-size:clamp(1.9rem,4.2vw,2.6rem);">Masers in Medicine</h1>
     <p class="lead" style="margin-bottom:8px;">
       How microwave amplification by stimulated emission of radiation (maser) technology could be
       applied to precision thermal medicine — tissue-level physics, regulatory limits, and
       real clinical use cases.
     </p>
-    <p style="color:var(--text-faint);font-family:var(--font-mono);font-size:.82rem;">31 sources cited · updated 2026</p>
+    <p style="color:var(--text-faint);font-size:.85rem;">31 sources cited · updated 2026</p>
   </div>
 </header>
 
 <div class="wrap research-body">
 
-  <div class="toc reveal">
+  <div class="toc">
     <p class="label">Contents</p>
     <ul>
       <li><a href="#what-is">What is a Maser?</a></li>
       <li><a href="#precautions">Device Precautions</a></li>
       <li><a href="#tissue">Tissue Effects</a></li>
       <li><a href="#attenuation">Energy Attenuation</a></li>
-      <li><a href="#calc-attenuation">↳ Live Attenuation Calculator</a></li>
       <li><a href="#energy-reqs">Energy Requirements</a></li>
       <li><a href="#standards">FDA / IEC Standards</a></li>
       <li><a href="#thermal">Thermal Effect Calculations</a></li>
-      <li><a href="#calc-thermal">↳ Live Thermal Rise Calculator</a></li>
       <li><a href="#pulse">Pulse Duration Compliance</a></li>
       <li><a href="#interference">Interference &amp; Focal Point</a></li>
       <li><a href="#how-it-works">How the Device Works</a></li>
@@ -69,8 +69,8 @@
     </ul>
   </div>
 
-  <h2 id="what-is" class="reveal">What is a Maser (how does it connect to Microwaves)?</h2>
-  <p class="reveal">
+  <h2 id="what-is">What is a Maser (how does it connect to Microwaves)?</h2>
+  <p>
     A maser (short for <em>Microwave Amplification by Stimulated Emission of Radiation</em>) is a
     device that produces and amplifies electromagnetic waves, typically in the microwave or radio
     frequency range, through the process of stimulated emission. It operates on principles similar
@@ -78,7 +78,7 @@
     is essentially a version of a maser operating at optical frequencies instead of microwave
     frequencies.<sup>1</sup>
   </p>
-  <p class="reveal">
+  <p>
     Microwaves interact with matter through a transfer in energy, often resulting in heat. They are
     especially effective at exciting polar molecules in water, fats, and sugars, which carry
     positive and negative charges.<sup>2</sup> When microwaves pass through polar materials, the
@@ -86,14 +86,14 @@
     That heat is then naturally distributed throughout the material — the same mechanism that makes
     microwaves efficient for heating or cooking food.
   </p>
-  <p class="reveal">
+  <p>
     Masers are a relatively new technology — the first room-temperature maser was only produced in
     2012. That opened up new opportunities for masers in a variety of spaces, including the medical
     field.<sup>4</sup>
   </p>
 
-  <h2 id="precautions" class="reveal">Precautions with Medical Devices Not Compatible with Masers</h2>
-  <p class="reveal">
+  <h2 id="precautions">Precautions with Medical Devices Not Compatible with Masers</h2>
+  <p>
     Microwave maser technology creates high-intensity microwave radiation that, when precisely
     focused, can create localized heating of target tissue — leading to controlled destruction or
     coagulation of abnormal cells.<sup>5</sup> That precision comes with risk: there is a real
@@ -104,7 +104,7 @@
     Masers fortunately do not affect X-rays, which allows a system to use X-ray imaging to locate
     the coordinates of the area that needs to be cauterized or operated on.<sup>8</sup>
   </p>
-  <p class="reveal">
+  <p>
     Masers can also pose a significant risk to implanted medical devices such as pacemakers,
     defibrillators, and neurostimulators, which rely on precise electrical signals. Exposure to
     microwave radiation can cause malfunctions, alter device programming, or induce erratic
@@ -114,32 +114,32 @@
     maser technology.
   </p>
 
-  <h3 class="reveal">Implanted Medical Devices</h3>
-  <ul class="reveal">
+  <h3>Implanted Medical Devices</h3>
+  <ul>
     <li><strong>Pacemakers &amp; Defibrillators:</strong> microwaves can break electrical circuitry, potentially causing dangerous misfiring.</li>
     <li><strong>Cochlear Implants:</strong> microwaves can create signal disruption or damage.<sup>10</sup></li>
     <li><strong>Neurostimulators:</strong> high-energy radiation could interfere with the device's electrical output or programming.<sup>11</sup></li>
   </ul>
-  <h3 class="reveal">Wearable or Monitoring Devices</h3>
-  <ul class="reveal">
+  <h3>Wearable or Monitoring Devices</h3>
+  <ul>
     <li><strong>Heart Rate / Glucose Monitors:</strong> microwaves could disrupt wireless communication or internal electronics.</li>
     <li><strong>Insulin Pumps:</strong> exposure could lead to malfunctions in delivery mechanisms or electronics.<sup>12</sup></li>
   </ul>
-  <h3 class="reveal">Metallic / Electronic Prosthetics</h3>
-  <ul class="reveal">
+  <h3>Metallic / Electronic Prosthetics</h3>
+  <ul>
     <li><strong>Myoelectric Prosthetics:</strong> sensitive electronic components could overheat or short-circuit.<sup>13</sup></li>
     <li><strong>Metal Implants</strong> (rods, screws, braces): metal reflects or absorbs microwaves, causing localized heating or potential burns.<sup>14</sup></li>
   </ul>
-  <h3 class="reveal">Life Support &amp; Diagnostic Devices</h3>
-  <ul class="reveal">
+  <h3>Life Support &amp; Diagnostic Devices</h3>
+  <ul>
     <li><strong>Ventilators / ECMO:</strong> disrupted electronic controls could lead to failure.</li>
     <li><strong>Dialysis Machines:</strong> potential overheating or electronic damage.<sup>15</sup></li>
     <li><strong>Portable Ultrasound:</strong> interference with signal processing or probe damage.</li>
     <li><strong>EKG Machines:</strong> disruption of electrical signals may lead to inaccurate readings or device failure.<sup>16</sup></li>
   </ul>
 
-  <h2 id="tissue" class="reveal">Microwave Effects on Different Internal Tissues</h2>
-  <table class="reveal">
+  <h2 id="tissue">Microwave Effects on Different Internal Tissues</h2>
+  <table>
     <thead><tr><th>Tissue Type</th><th>Key Properties &amp; Reaction to Masers</th></tr></thead>
     <tbody>
       <tr><td>Muscle</td><td>High water content — absorbs energy efficiently.</td></tr>
@@ -150,13 +150,13 @@
     </tbody>
   </table>
 
-  <h2 id="attenuation" class="reveal">Energy Attenuation by Tissue Type</h2>
-  <p class="reveal">
+  <h2 id="attenuation">Energy Attenuation by Tissue Type</h2>
+  <p>
     Each tissue in the body reduces maser energy by a different amount, depending on water content,
     density, and blood flow. This must be accounted for when focusing on internal targets and
     calculating required energy levels.
   </p>
-  <table class="reveal">
+  <table>
     <thead><tr><th>Tissue Layer</th><th>Energy Attenuation Rate (per cm)</th></tr></thead>
     <tbody>
       <tr><td>Skin</td><td>10–20%</td></tr>
@@ -166,45 +166,26 @@
       <tr><td>Brain Tissue</td><td>20–40%</td></tr>
     </tbody>
   </table>
-  <p class="reveal">Cumulative attenuation is found by summing the reduction across layers:<sup>17</sup></p>
-  <div class="eq reveal">E = (1 − a)ⁿ</div>
-  <p class="reveal">Where <strong>E</strong> is the fraction of energy remaining after passing through the tissue, <strong>a</strong> is the attenuation rate as a decimal, and <strong>n</strong> is the number of centimeters traveled.</p>
+  <p>Cumulative attenuation is found by summing the reduction across layers:<sup>17</sup></p>
+  <div class="eq">E = (1 − a)ⁿ</div>
+  <p>Where <strong>E</strong> is the fraction of energy remaining after passing through the tissue, <strong>a</strong> is the attenuation rate as a decimal, and <strong>n</strong> is the number of centimeters traveled.</p>
 
-  <div class="calc-card reveal" id="calc-attenuation">
-    <h4>⚡ Live Attenuation Calculator</h4>
-    <p class="calc-sub">Using E = (1 − a)ⁿ with the midpoint attenuation rate for each tissue above.</p>
-    <div class="calc-row">
-      <div class="calc-field">
-        <label for="att-tissue">Tissue</label>
-        <select id="att-tissue">
-          <option value="0.15">Skin (~15%/cm)</option>
-          <option value="0.075">Fat (~7.5%/cm)</option>
-          <option value="0.20" selected>Muscle (~20%/cm)</option>
-          <option value="0.40">Bone (~40%/cm)</option>
-          <option value="0.30">Brain Tissue (~30%/cm)</option>
-        </select>
-      </div>
-      <div class="calc-field">
-        <label for="att-depth">Depth (cm)</label>
-        <input type="number" id="att-depth" value="3" min="0" max="20" step="0.5">
-      </div>
-    </div>
-    <div class="calc-result">
-      Remaining energy at depth: <span class="big" id="att-result">51.2%</span>
-      <div class="calc-bar-track"><div class="calc-bar-fill" id="att-bar"></div></div>
-    </div>
-  </div>
+  <p>
+    For example, at 3 cm into muscle tissue (attenuation ≈ 20%/cm), roughly 51% of the beam's
+    original energy remains — illustrating why deeper or bone-shielded targets require
+    substantially higher initial output.
+  </p>
 
-  <h2 id="energy-reqs" class="reveal">Energy Requirements</h2>
-  <p class="reveal">
+  <h2 id="energy-reqs">Energy Requirements</h2>
+  <p>
     To cauterize tissue, the focal point must reach approximately 80°C. A single maser beam loses
     roughly 33% of its energy per centimeter when passing through bone — meaning reaching a focal
     point 18 inches (45.72 cm) into the body may require a total of <strong>1,372 kilowatts</strong>
     of pulsed power from all four masers combined.<sup>18</sup>
   </p>
 
-  <h2 id="standards" class="reveal">FDA and IEC 60601-1-2 Standards for Radiation and Energy Levels</h2>
-  <p class="reveal">
+  <h2 id="standards">FDA and IEC 60601-1-2 Standards for Radiation and Energy Levels</h2>
+  <p>
     Compliance with <strong>IEC 60601-1-2</strong> is critical for electromagnetic safety — it
     specifies allowable limits for emissions and immunity to electromagnetic disturbance so a
     device doesn't interfere with other medical equipment.<sup>19,20</sup> Thermal safety is governed
@@ -213,7 +194,7 @@
     <strong>4 W/kg</strong> internationally — limits meant to keep tissue below the ~43°C threshold
     for irreversible thermal harm during prolonged exposure.
   </p>
-  <p class="reveal">
+  <p>
     Energy levels for internal cauterization devices are typically controlled to
     <strong>10–100 watts</strong> at frequencies like <strong>915 MHz or 2.45 GHz</strong>, as used
     in microwave ablation systems today. ICNIRP guidelines cap pulsed public exposure around
@@ -223,11 +204,11 @@
     failure rate under 0.1% per year to meet medical-device reliability expectations.<sup>23</sup>
   </p>
 
-  <h2 id="thermal" class="reveal">Energy Transfer Simulation &amp; Thermal Effect Calculations</h2>
-  <p class="reveal">To estimate the temperature rise in tissue from absorbed energy:</p>
-  <div class="eq reveal">Q = m · c · ΔT</div>
-  <p class="reveal">Where <strong>Q</strong> is heat energy absorbed (J), <strong>m</strong> is tissue mass (g), <strong>c</strong> is specific heat capacity (J/g°C), and <strong>ΔT</strong> is the temperature change (°C).</p>
-  <table class="reveal">
+  <h2 id="thermal">Energy Transfer Simulation &amp; Thermal Effect Calculations</h2>
+  <p>To estimate the temperature rise in tissue from absorbed energy:</p>
+  <div class="eq">Q = m · c · ΔT</div>
+  <p>Where <strong>Q</strong> is heat energy absorbed (J), <strong>m</strong> is tissue mass (g), <strong>c</strong> is specific heat capacity (J/g°C), and <strong>ΔT</strong> is the temperature change (°C).</p>
+  <table>
     <thead><tr><th>Tissue</th><th>Specific Heat (J/g°C)</th><th>Density (g/cm³)</th><th>Thermal Conductivity (W/m°C)</th></tr></thead>
     <tbody>
       <tr><td>Muscle</td><td>3.8</td><td>1.6</td><td>0.51</td></tr>
@@ -238,69 +219,51 @@
     </tbody>
   </table>
 
-  <div class="calc-card reveal" id="calc-thermal">
-    <h4>🌡️ Live Thermal Rise Calculator</h4>
-    <p class="calc-sub">Using Q = m·c·ΔT, rearranged to ΔT = Q / (m·c), with Q = absorbed power × time.</p>
-    <div class="calc-row">
-      <div class="calc-field">
-        <label for="th-tissue">Tissue</label>
-        <select id="th-tissue">
-          <option value="3.8" selected>Muscle (c = 3.8)</option>
-          <option value="2.1">Fat (c = 2.1)</option>
-          <option value="1.4">Bone (c = 1.4)</option>
-          <option value="3.8">Blood (c = 3.8)</option>
-          <option value="3.9">Brain Tissue (c = 3.9)</option>
-        </select>
-      </div>
-      <div class="calc-field"><label for="th-power">Absorbed Power (W)</label><input type="number" id="th-power" value="40" min="0" step="1"></div>
-      <div class="calc-field"><label for="th-time">Time (s)</label><input type="number" id="th-time" value="2" min="0" step="0.1"></div>
-      <div class="calc-field"><label for="th-mass">Tissue Mass (g)</label><input type="number" id="th-mass" value="5" min="0.1" step="0.1"></div>
-    </div>
-    <div class="calc-result">
-      Temperature rise: <span class="big" id="th-result">10.1°C</span>
-      <div style="font-size:.78rem;color:var(--text-faint);margin-top:6px;">Q = P × t = <span id="th-q">80</span> J</div>
-    </div>
-  </div>
+  <p>
+    As a worked example: 40 W absorbed in 5 g of muscle tissue (c = 3.8 J/g°C) over 2 seconds
+    delivers Q = 80 J, for a temperature rise of ΔT ≈ 10.1°C — a reminder of how quickly focused
+    pulses can push tissue toward the cauterization threshold if left uncontrolled.
+  </p>
 
-  <h2 id="pulse" class="reveal">Regulatory Compliance for Pulse Duration and Frequency</h2>
-  <p class="reveal">
+  <h2 id="pulse">Regulatory Compliance for Pulse Duration and Frequency</h2>
+  <p>
     IEC standards for medical equipment may stipulate a maximum pulse duration of 1 millisecond and
     a maximum pulse energy of 10 millijoules, with a duty cycle that prevents prolonged
     high-intensity pulses.<sup>28</sup>
   </p>
-  <div class="eq reveal">E(pulse) = P(avg) · τ<br>P(total) = E(pulse) · f(rep)</div>
-  <p class="reveal">Where τ is pulse duration (s) and f(rep) is the pulse repetition frequency (pulses/s). Compliance requires confirming E(pulse) ≤ E(max), τ ≤ τ(max), and P(total) ≤ P(max).</p>
+  <div class="eq">E(pulse) = P(avg) · τ<br>P(total) = E(pulse) · f(rep)</div>
+  <p>Where τ is pulse duration (s) and f(rep) is the pulse repetition frequency (pulses/s). Compliance requires confirming E(pulse) ≤ E(max), τ ≤ τ(max), and P(total) ≤ P(max).</p>
 
-  <h2 id="interference" class="reveal">Maser Interference Intensity &amp; Focal Point Dynamics</h2>
-  <p class="reveal">For each maser beam, the electric field at a point in space and time is:</p>
-  <div class="eq reveal">E₁(total) = E₀cos(wt + ø₁)<br>E₂(total) = E₀cos(wt + ø₂)</div>
-  <p class="reveal">
+  <h2 id="interference">Maser Interference Intensity &amp; Focal Point Dynamics</h2>
+  <p>For each maser beam, the electric field at a point in space and time is:</p>
+  <div class="eq">E₁(total) = E₀cos(wt + ø₁)<br>E₂(total) = E₀cos(wt + ø₂)</div>
+  <p>
     Where E₀ is the field amplitude (proportional to maser energy), w = 2πf is angular frequency,
     and ø₁/ø₂ are the starting phase angles. The phase difference (ø₁ − ø₂) determines whether the
     waves interfere constructively or destructively at the focal point.<sup>29,30</sup>
   </p>
-  <div class="eq reveal">P(abs) ∝ [2E·cos(2Δø)·cos(ωt + 2ø₁ + ø₂)]²<br>ΔT = P(abs)·t / (m·C)</div>
-  <p class="reveal">
+  <div class="eq">P(abs) ∝ [2E·cos(2Δø)·cos(ωt + 2ø₁ + ø₂)]²<br>ΔT = P(abs)·t / (m·C)</div>
+  <p>
     At the focal point, constructive interference (phase difference = 0 or an integer multiple of
     2π) maximizes amplitude — this is the region the maser system targets to concentrate heating
     precisely at the treatment site while minimizing effects elsewhere.<sup>31</sup>
   </p>
 
-  <h2 id="how-it-works" class="reveal">How the Medical Device Works</h2>
-  <p class="reveal">
+  <h2 id="how-it-works">How the Medical Device Works</h2>
+  <p>
     A key feature distinguishing masers from traditional microwave technologies is their ability to
     emit highly concentrated pulses of energy, enabling extreme precision. Pulses are delivered at
     high energy levels — up to 300 kilowatts — allowing rapid targeting and heating of tumors or
     problem tissue to the ~80°C cauterization threshold, released in brief millisecond bursts so
     surrounding tissue can dissipate excess heat between pulses.<sup>32–34</sup>
   </p>
-  <p class="reveal">
+  <p>
     Different tissues absorb energy differently, so the system dynamically adjusts pulse strength
     and timing — in highly vascularized tissue, this enables quick coagulation of blood vessels
     while preventing heat buildup in surrounding healthy tissue.<sup>35,36</sup>
   </p>
-  <h3 class="reveal">Operational Workflow</h3>
-  <p class="reveal">
+  <h3>Operational Workflow</h3>
+  <p>
     The target tissue is first identified using imaging (X-ray or ultrasound) to pinpoint the exact
     focal coordinates. The maser system's mounts are then positioned to focus their beams on that
     point. Throughout the procedure, real-time imaging and temperature sensors monitor tissue
@@ -310,9 +273,9 @@
     more effectively.<sup>38,39</sup>
   </p>
 
-  <h2 id="use-cases" class="reveal">Possible Clinical Use Cases</h2>
-  <p class="reveal">Beyond simple cauterization, a converging-maser system opens up a wide range of potential medical applications:</p>
-  <table class="reveal">
+  <h2 id="use-cases">Possible Clinical Use Cases</h2>
+  <p>Beyond simple cauterization, a converging-maser system opens up a wide range of potential medical applications:</p>
+  <table>
     <thead><tr><th>Application</th><th>Benefit</th></tr></thead>
     <tbody>
       <tr><td><strong>Tumor Ablation</strong></td><td>Minimally invasive alternative to surgery for small or inaccessible tumors</td></tr>
@@ -336,8 +299,8 @@
     </tbody>
   </table>
 
-  <h2 id="conclusion" class="reveal">Conclusion</h2>
-  <p class="reveal">
+  <h2 id="conclusion">Conclusion</h2>
+  <p>
     While converging multiple maser beams to a focal point is technically possible with current
     technology, several significant challenges remain. Achieving precise wave synchronization and
     power control to concentrate heat in a controlled, targeted manner would require advanced
@@ -351,8 +314,8 @@
     prototype is realistic.
   </p>
 
-  <h2 id="references" class="reveal">References</h2>
-  <ol class="refs reveal">
+  <h2 id="references">References</h2>
+  <ol class="refs">
     <li>Breeze Lab. <em>Masers.</em> <a href="https://breezelab.org/masers/" target="_blank" rel="noopener">breezelab.org/masers</a></li>
     <li>Britannica. <em>Laser.</em> <a href="https://www.britannica.com/technology/laser" target="_blank" rel="noopener">britannica.com/technology/laser</a></li>
     <li>NCBI. <em>Microwave Effects on Biological Tissue.</em> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5363389/" target="_blank" rel="noopener">PMC5363389</a></li>
@@ -385,9 +348,9 @@
     <li>Speag Research. <em>Microwave Energy and Tissue Interaction.</em> <a href="https://speag.swiss/assets/downloads/publications/Kivekaes2004.pdf" target="_blank" rel="noopener">speag.swiss</a></li>
     <li>arXiv. <em>Microwave Medical Technology and Energy Transfer.</em> <a href="https://arxiv.org/abs/2102.06763" target="_blank" rel="noopener">arxiv.org/abs/2102.06763</a></li>
   </ol>
-  <p class="refs reveal" style="margin-top:-8px;">Plus foundational texts: Born &amp; Wolf, <em>Principles of Optics</em> (1999); Pozar, <em>Microwave Engineering</em> (2011); Yariv &amp; Yeh, <em>Photonics</em> (2007).</p>
+  <p class="refs" style="margin-top:-8px;">Plus foundational texts: Born &amp; Wolf, <em>Principles of Optics</em> (1999); Pozar, <em>Microwave Engineering</em> (2011); Yariv &amp; Yeh, <em>Photonics</em> (2007).</p>
 
-  <div class="reveal" style="margin:48px 0 20px;">
+  <div style="margin:48px 0 20px;">
     <a href="index.html#research" class="back-link">← Back to portfolio</a>
   </div>
 </div>
@@ -400,6 +363,5 @@
 </footer>
 
 <script src="js/main.js"></script>
-<script src="js/calculators.js"></script>
 </body>
 </html>
