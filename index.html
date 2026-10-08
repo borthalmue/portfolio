@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brock Pola — Portfolio</title>
 <meta name="description" content="Engineering portfolio: FRC fabrication &amp; CAM, mechanical design, and applied research.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23c2a26c%22/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23335c81%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -19,7 +19,9 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#fabrication">Fabrication</a></li>
+      <li><a href="#robotics">Robotics</a></li>
+      <li><a href="#software">Software</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -41,10 +43,11 @@
     <p class="lead">
       High schooler working across CAD/CAM, CNC fabrication, competitive robotics, mechanical
       design, and applied research — currently leading fabrication for FRC Team 9038 (SF Unity)
-      and building independent hardware projects on the side.
+      and building independent hardware and software projects on the side — lately that's meant
+      writing the control logic and tracking code to go with the stuff I build, not just the parts.
     </p>
     <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">View projects</a>
+      <a href="#robotics" class="btn btn-primary">View projects</a>
       <a href="#contact" class="btn">Get in touch</a>
     </div>
   </div>
@@ -94,9 +97,56 @@
   </div>
 </section>
 
-<section id="projects">
+<section id="fabrication">
   <div class="wrap">
-    <p class="kicker">Projects</p>
+    <p class="kicker">Fabrication</p>
+    <div class="entry-list">
+
+      <article class="entry">
+        <div class="entry-top">
+          <h3>Woodworking Projects</h3>
+          <span class="entry-date">Ongoing</span>
+        </div>
+        <p class="entry-meta">Hand &amp; power tool builds, furniture, shop fixtures</p>
+        <p>
+          <!-- EDIT ME: list/describe your actual woodworking projects here -->
+          A running collection of woodworking builds — furniture, shop jigs/fixtures, and
+          one-off pieces. Same design instinct as the CAD/CAM work below, just with a
+          different material and often no CNC involved.
+        </p>
+        <h4>Piece list</h4>
+        <ul>
+          <li><!-- EDIT ME --> Project name — brief description, materials, techniques used</li>
+          <li><!-- EDIT ME --> Project name — brief description, materials, techniques used</li>
+          <li><!-- EDIT ME --> Project name — brief description, materials, techniques used</li>
+        </ul>
+        <p class="editnote">Photos of finished pieces go here once they're ready.</p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-top">
+          <h3>CNC &amp; CAM — Turret Mirror Plate</h3>
+          <span class="entry-date">FRC 9038</span>
+        </div>
+        <p class="entry-meta">Precision-fit aluminum plate for the turret assembly</p>
+        <p>
+          One of the parts from this season's robot I took fully from CAD to finished part —
+          modeled, CAM-programmed, and cut on the CNC myself. Posted here as a real example of the
+          toolpathing work described in the robotics section below, not just a description of it.
+        </p>
+        <div class="entry-links">
+          <a href="assets/cad/mirror-plate.step" download>Download STEP — mirror plate</a>
+          <a href="assets/cad/full-assembly.step" download>Download STEP — full robot assembly</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="robotics">
+  <div class="wrap">
+    <p class="kicker">Robotics</p>
     <div class="entry-list">
 
       <!-- FRC 9038 -->
@@ -136,8 +186,6 @@
         <div class="entry-links">
           <a href="https://www.thebluealliance.com/team/9038" target="_blank" rel="noopener">Team on The Blue Alliance</a>
           <a href="https://frc-events.firstinspires.org/2026/team/9038" target="_blank" rel="noopener">FIRST team page</a>
-          <a href="assets/cad/mirror-plate.step" download>Download STEP — mirror plate</a>
-          <a href="assets/cad/full-assembly.step" download>Download STEP — full assembly</a>
         </div>
       </article>
 
@@ -166,31 +214,60 @@
           mechanical problem as much as an electrical one. This project explores the mechanism
           side: how to get repeatable, controllable two-axis pointing out of simple gears and
           motors, which is the same core problem behind the focused-beam concepts explored in the
-          <a href="maser.html">Masers in Medicine research</a>.
+          <a href="maser.html">Masers in Medicine research</a> — and the problem the
+          <a href="https://github.com/borthalmue/turret-tracking-sim" target="_blank" rel="noopener">turret-tracking-sim</a>
+          software below was written to solve.
         </p>
         <p class="editnote">Photos of the build go here once they're ready.</p>
       </article>
 
-      <!-- Woodworking -->
+    </div>
+  </div>
+</section>
+
+<section id="software">
+  <div class="wrap">
+    <p class="kicker">Software</p>
+    <p style="color:var(--text-dim);max-width:60ch;margin:-8px 0 28px;">
+      Most of what I build ends up needing some code behind it — tracking/control logic for
+      mechanisms, or just working through a machine learning idea. Still early here, but it's
+      where a lot of my interest is heading: AI models, robotics logic, and the overlap between
+      the two.
+    </p>
+    <div class="entry-list">
+
       <article class="entry">
         <div class="entry-top">
-          <h3>Woodworking Projects</h3>
-          <span class="entry-date">Ongoing</span>
+          <h3>turret-tracking-sim</h3>
+          <span class="entry-date">Python</span>
         </div>
-        <p class="entry-meta">Hand &amp; power tool builds, furniture, shop fixtures</p>
+        <p class="entry-meta">Control logic for a 2-axis gimbal</p>
         <p>
-          <!-- EDIT ME: list/describe your actual woodworking projects here -->
-          A running collection of woodworking builds — furniture, shop jigs/fixtures, and
-          one-off pieces. Same design instinct as the CAD/CAM work above, just with a
-          different material and often no CNC involved.
+          A simulation of the tracking logic for the gear-driven gimbal above — proportional
+          control with slew-rate limiting (modeling a real gearbox's max speed) and a deadzone so
+          it settles instead of jittering once it locks on. Built to work out the control loop
+          before it ever touches a motor.
         </p>
-        <h4>Piece list</h4>
-        <ul>
-          <li><!-- EDIT ME --> Project name — brief description, materials, techniques used</li>
-          <li><!-- EDIT ME --> Project name — brief description, materials, techniques used</li>
-          <li><!-- EDIT ME --> Project name — brief description, materials, techniques used</li>
-        </ul>
-        <p class="editnote">Photos of finished pieces go here once they're ready.</p>
+        <div class="entry-links">
+          <a href="https://github.com/borthalmue/turret-tracking-sim" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-top">
+          <h3>cv-image-classifier</h3>
+          <span class="entry-date">Python · TensorFlow/Keras</span>
+        </div>
+        <p class="entry-meta">Transfer learning · VGG16 · cats vs. dogs vs. horses</p>
+        <p>
+          A three-class image classifier built on a frozen VGG16 base with a small trained head
+          on top — started as coursework, but I pushed past the base assignment by rebalancing the
+          dataset (it was heavily skewed toward dogs) and adding a manual predict step to test the
+          model on photos outside the training set. ~90%+ validation accuracy after 10 epochs.
+        </p>
+        <div class="entry-links">
+          <a href="https://github.com/borthalmue/cv-image-classifier" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
       </article>
 
     </div>
@@ -238,6 +315,14 @@
           <li>FRC competition fabrication</li>
           <li>Drivetrain &amp; superstructure builds</li>
           <li>Build-season project management</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Software</h4>
+        <ul>
+          <li>Python — control logic, simulation</li>
+          <li>TensorFlow / Keras basics</li>
+          <li>Git &amp; GitHub workflow</li>
         </ul>
       </div>
       <div class="skill-group">
