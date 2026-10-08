@@ -321,6 +321,36 @@
         </div>
       </article>
 
+      <article class="entry">
+        <div class="entry-top">
+          <h3>setlist-ai</h3>
+          <span class="entry-date">Python</span>
+        </div>
+        <p class="entry-meta">Harmonic mixing · BPM &amp; key detection · setlist planning</p>
+        <p>
+          I DJ, and I got tired of doing the "what should come next" math in my head before
+          building a set. This analyzes BPM and musical key for a whole folder of tracks, maps
+          each one onto the Camelot wheel (the same system rekordbox and Serato use), and plans
+          a play order that keeps transitions clean: harmonically compatible keys, tempo-matched
+          or half/double-time-matched BPMs, and a smooth energy flow. It can hand you an m3u
+          playlist, or just render the whole thing as one continuous mixed audio file with
+          real crossfades.
+        </p>
+        <p>
+          Ordering a crate well is an open-path traveling salesman problem underneath, so I used
+          nearest-neighbor construction plus a 2-opt cleanup pass to actually solve it. Tested
+          against synthetic click tracks with known BPM and key (no copyrighted audio in the
+          repo), and then against my own library by hand, which is how I caught a fun bug: a
+          beat tracker reading a 129 bpm track as 64.5 bpm (a classic octave error) was showing
+          up as a wildly wrong transition note, even though the actual planning logic already
+          knew half-time tracks mix fine. Fixed the display to match what the planner was
+          already doing correctly.
+        </p>
+        <div class="entry-links">
+          <a href="https://github.com/borthalmue/setlist-ai" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
