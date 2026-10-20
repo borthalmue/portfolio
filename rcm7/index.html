@@ -112,6 +112,9 @@ td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:ri
 </style>
 
 <style>
+[hidden]{display:none!important}
+body{margin:0}
+img{max-width:100%}
 /* ?embed: just the stage and the control pendant, for iframes */
 body.embed .wrap{padding-block:0;gap:0;max-width:none}
 body.embed .wrap>header, body.embed .lede, body.embed section{display:none}
@@ -119,7 +122,6 @@ body.embed .stage{position:relative;top:0}
 body.embed #view{height:calc(100vh - 2px);min-height:420px}
 @media (max-width:1000px){ body.embed #view{height:62vh} }
 </style>
-
 <style>.crumb{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;font-size:.84rem}.crumb a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}.crumb a:hover{color:var(--ink)}body.embed .crumb{display:none}</style>
 </head>
 <body>
@@ -299,8 +301,14 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(32, 1.6, 5, 20000);
 const controls = new THREE.OrbitControls(camera, canvas);
 controls.enableDamping = true; controls.dampingFactor = 0.12;
-function fitView(){ camera.position.set(-1180, 640, 1380); controls.target.set(-250, 150, -40); controls.update(); }
+const VIEW_T = V3(-250, 185, -40), VIEW_D = V3(-930, 490, 1420);
+let userMoved = false;
+function fitView(){
+  const asp = Math.max(0.5, canvas.clientWidth/Math.max(1, canvas.clientHeight));
+  camera.position.copy(VIEW_T).addScaledVector(VIEW_D, Math.max(1, 1.55/asp)); controls.target.copy(VIEW_T); controls.update();
+}
 fitView();
+controls.addEventListener('start', () => { userMoved = true; });
 scene.add(new THREE.HemisphereLight(0xffffff, 0x8a9096, 0.75));
 const key = new THREE.DirectionalLight(0xffffff, 0.85); key.position.set(-600, 1200, 900); scene.add(key);
 const fill = new THREE.DirectionalLight(0xffffff, 0.35); fill.position.set(900, 300, -900); scene.add(fill);
@@ -473,7 +481,7 @@ PRESETS.forEach(([nm, p]) => { const b = document.createElement('button'); b.typ
 function hold(){ J.forEach(j => { TG[j.k] = S[j.k]; VEL[j.k] = 0; }); stopDemo(); }
 el('holdAll').addEventListener('click', hold);
 el('estop').addEventListener('click', () => { hold(); });
-el('fit').addEventListener('click', fitView);
+el('fit').addEventListener('click', () => { userMoved = false; fitView(); });
 let demo = false, demoT = 0;
 el('demo').addEventListener('click', () => demo ? stopDemo() : startDemo());
 function startDemo(){ if (braked()) return; demo = true; demoT = 0; el('demo').textContent = 'Stop demo'; }
@@ -658,7 +666,7 @@ function draw(){
   }
   // render
   const w = canvas.clientWidth, h = canvas.clientHeight, pr = renderer.getPixelRatio();
-  if (canvas.width !== Math.round(w*pr) || canvas.height !== Math.round(h*pr)){ renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix(); }
+  if (canvas.width !== Math.round(w*pr) || canvas.height !== Math.round(h*pr)){ renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix(); if (!userMoved) fitView(); }
   scene.updateMatrixWorld(true);
   renderer.render(scene, camera);
   const show = el('showTags').checked;
