@@ -14,8 +14,12 @@ Live site: https://borthalmue.github.io/portfolio/
 - `assets/images/`: project photos (folders already created: `frc/`, `gimbal/`, `woodworking/`, `robot-arm-sim/`, `hero/`)
 - `assets/cad/`: downloadable STEP files (mirror plate, full robot assembly)
 
-Related repos linked from the Software section: `robot-arm-sim`, `turret-tracking-sim`, and
-`cv-image-classifier`, all under github.com/borthalmue.
+- `rcm7/`: the RCM-7 surgical arm simulator (opened from the Robotics section). It's built from
+  the `rcm7-surgical-arm` repo; to update it, run that repo's generator and copy `index.html`,
+  `assets/rcm7-data.js` and `images/overall.png` into this folder.
+
+Related repos: `rcm7-surgical-arm` (Robotics section), plus `robot-arm-sim`,
+`cv-image-classifier` and `setlist-ai` in the Software section, all under github.com/borthalmue.
 
 ## Adding real photos
 

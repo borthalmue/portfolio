@@ -214,6 +214,50 @@
     <p class="kicker">Robotics</p>
     <div class="entry-list">
 
+      <!-- RCM-7 surgical arm -->
+      <article class="entry">
+        <div class="entry-top">
+          <h3>RCM-7 Surgical Arm</h3>
+          <span class="entry-date">Mechanism design · CAD · simulation</span>
+        </div>
+        <p class="entry-meta">7-DOF remote-center-of-motion arm · double parallelogram · interactive simulator</p>
+        <p>
+          A concept arm for minimally invasive surgery, built around the same idea the da Vinci
+          uses: a double parallelogram that makes the instrument pivot about one fixed point at the
+          incision, even though there's no hardware sitting at that point. On top of that there's a
+          yaw axis and an instrument roll that both pass through the same point, a ball-screw
+          insertion stage, and a cable-driven wrist with grip. Seven joints in all, sized around
+          real catalog parts: Harmonic Drive gear units, maxon motors, a HIWIN rail, and THK and
+          SKF bearings.
+        </p>
+        <p>
+          A lot of the design went into what happens when something breaks. Each parallelogram
+          holds its angle two separate ways, a bar and a steel-cord belt riding on a different link,
+          so either one can fail and the pivot point still doesn't move. Every powered joint has a
+          spring-applied brake that holds when power drops, plus a motor-side vs. joint-side encoder
+          check that stops the arm if a drive belt slips.
+        </p>
+        <a href="rcm7/" title="Open the interactive simulator">
+          <img src="rcm7/images/overall.png" alt="Labelled render of the RCM-7 arm: yaw drive, twin-plate links, both couplers, the spar with its rail, the instrument drive, and the remote center R at the incision" style="border:1px solid var(--border);border-radius:6px;margin:14px 0;">
+        </a>
+        <h4>What I checked</h4>
+        <ul>
+          <li>The pivot point stays put to within floating-point rounding (about 10<sup>&minus;14</sup> mm) across 4,000 random poses of all seven joints</li>
+          <li>No collisions across 132 swept poses. The sweep caught a few real ones first, like the parallel links touching near full pitch and the yaw housing sitting in a link's path, and the final geometry fixes them</li>
+          <li>A counterbalance spring cuts the worst-case pitch gravity torque from 15 to 6.6 N&middot;m, keeping every joint under its gear unit's rating</li>
+        </ul>
+        <p style="font-size:.85rem;color:var(--text-faint);">
+          It's a concept model, so no fasteners, cabling, or stress analysis yet, and the catalog
+          parts are modeled from their datasheet dimensions. The simulator runs right in the
+          browser: drive every joint, jog the tool tip, and break parts on purpose to see what the
+          arm does.
+        </p>
+        <div class="entry-links">
+          <a href="rcm7/">Open the interactive simulator</a>
+          <a href="https://github.com/borthalmue/rcm7-surgical-arm" target="_blank" rel="noopener">CAD and code on GitHub</a>
+        </div>
+      </article>
+
       <!-- FRC 9038 -->
       <article class="entry">
         <div class="entry-top">
@@ -291,11 +335,8 @@
           about the mechanism side of that: getting repeatable, controllable two-axis pointing out
           of simple gears and motors. It's a simpler cousin of the multi-joint targeting problem in
           <a href="https://github.com/borthalmue/robot-arm-sim" target="_blank" rel="noopener">robot-arm-sim</a>,
-          down in the software section, and the
-          <a href="https://github.com/borthalmue/turret-tracking-sim" target="_blank" rel="noopener">turret-tracking-sim</a>
-          project was written specifically to work out this gimbal's control loop.
+          down in the software section.
         </p>
-        <p class="editnote">Photos of the build go here once they're ready.</p>
       </article>
 
     </div>
@@ -342,23 +383,6 @@
         </p>
         <div class="entry-links">
           <a href="https://github.com/borthalmue/robot-arm-sim" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-top">
-          <h3>turret-tracking-sim</h3>
-          <span class="entry-date">Python</span>
-        </div>
-        <p class="entry-meta">Control logic for a 2-axis gimbal</p>
-        <p>
-          A simulation of the tracking logic for the gear-driven gimbal above. It uses proportional
-          control with slew-rate limiting (modeling a real gearbox's max speed) and a deadzone so
-          it settles down instead of jittering once it locks on. I built it to work out the control
-          loop before any of it touched a real motor.
-        </p>
-        <div class="entry-links">
-          <a href="https://github.com/borthalmue/turret-tracking-sim" target="_blank" rel="noopener">View on GitHub</a>
         </div>
       </article>
 
