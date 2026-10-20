@@ -305,7 +305,7 @@ const VIEW_T = V3(-250, 185, -40), VIEW_D = V3(-930, 490, 1420);
 let userMoved = false;
 function fitView(){
   const asp = Math.max(0.5, canvas.clientWidth/Math.max(1, canvas.clientHeight));
-  camera.position.copy(VIEW_T).addScaledVector(VIEW_D, Math.max(1, 1.55/asp)); controls.target.copy(VIEW_T); controls.update();
+  camera.position.copy(VIEW_T).addScaledVector(VIEW_D, Math.max(1, 1.3/asp)); controls.target.copy(VIEW_T); controls.update();
 }
 fitView();
 controls.addEventListener('start', () => { userMoved = true; });
